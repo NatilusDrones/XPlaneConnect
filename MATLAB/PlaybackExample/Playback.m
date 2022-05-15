@@ -20,16 +20,16 @@ fprintf('Playing back ''%s'' in %fs increments.\n', path, interval);
 
 %% Start Playback
 count = floor(duration / interval);
-pauseSim(1);
+pauseSim(1, Socket);
 for i = 1:count
     line = fgetl(fd);
     posi = sscanf(line, '%f, %f, %f, %f, %f, %f, %f\n');
-    sendPOSI(posi);
+    sendPOSI(posi, 0, Socket);
     pause(interval);
 end
 
 %% Close connection and file
-pauseSim(0);
+pauseSim(0, Socket);
 closeUDP(Socket);
 fclose(fd);
 

@@ -12,14 +12,14 @@ function sendPOSI( posi, ac, socket )
 %           7. Gear (0=up, 1=down)
 %     acft (optional): The aircraft to set. 0 for the player aircraft.
 %     socket (optional): The client to use when sending the command.
-%
+% 
 % Use
 %   1. import XPlaneConnect.*;
 %   2. sendPOSI([37.5242422, -122.06899, 2500, 0, 0, 0, 1], 1);
-%
+% 
 % Note: send the value -998 to not overwrite that parameter. That is, if
 % -998 is sent, the parameter will stay at the current X-Plane value.
-%
+% 
 % Contributors
 %   [CT] Christopher Teubert (SGT, Inc.)
 %       christopher.a.teubert@nasa.gov
